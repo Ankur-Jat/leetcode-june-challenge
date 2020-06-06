@@ -27,3 +27,15 @@ class Solution(object):
             self.wCopy[index] -= 1
             return index
         return len(self.wCopy) - 1
+
+
+solution = Solution([1, 2])
+itemCount = {}
+for _ in range(1000000):
+    item = solution.pickIndex()
+    if itemCount.get(item, None) == None:
+        itemCount[item] = 1
+    else:
+        itemCount[item] += 1
+print itemCount
+
